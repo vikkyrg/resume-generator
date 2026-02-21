@@ -12,7 +12,15 @@ dotenv.config();
 
 // ================= APP INIT =================
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://resume-generator.vercel.app" // your frontend URL
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // ================= DATABASE =================
