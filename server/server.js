@@ -27,7 +27,7 @@ app.use(
 );
 
 // ✅ Handle preflight manually (fixes 405 error)
-app.options("*", cors());
+app.options(/.*/, cors());
 
 // ================= BODY PARSER =================
 app.use(express.json({ limit: "10mb" }));
