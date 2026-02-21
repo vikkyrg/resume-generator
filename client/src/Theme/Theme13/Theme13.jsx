@@ -1,0 +1,138 @@
+import React, { useContext } from "react";
+import ResumeContext from "../../Context/ResumeContext";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import "./Theme13.css";
+
+const Theme13 = () => {
+  const { themeData } = useContext(ResumeContext);
+
+  const {
+    personalData,
+    projectData,
+    educationData,
+    workData,
+    awardData
+  } = themeData || {};
+
+  return (
+    <div className="theme13-page">
+
+      {/* ================= HEADER ================= */}
+      <div className="t13-header">
+        <div className="t13-header-image">
+          <img
+            src={
+              personalData?.profileImage ||
+              "https://via.placeholder.com/120"
+            }
+            alt="profile"
+          />
+        </div>
+
+        <div className="t13-header-text">
+          <h1>{personalData?.name || "Your Name"}</h1>
+          <h3>{personalData?.profile || "Your Professional Title"}</h3>
+        </div>
+      </div>
+
+      {/* ================= BODY ================= */}
+      <div className="t13-body">
+
+        {/* ---------- LEFT SIDEBAR ---------- */}
+        <div className="t13-left">
+
+          <section>
+            <h2>Contact</h2>
+            <p><FiPhone /> {personalData?.phone || "0000000000"}</p>
+            <p><FiMail /> {personalData?.email || "email@gmail.com"}</p>
+            <p><FiMapPin /> {personalData?.address || "City, State"}</p>
+          </section>
+
+          <section>
+            <h2>Education</h2>
+            {Object.keys(educationData?.educationTitles || {}).map((key, i) => (
+              <div key={i} className="t13-left-block">
+                <b>{educationData.educationTitles[key]}</b>
+                <p>
+                  {(educationData.educationDesc[`eDescription${i + 1}`] || "")
+                    .split(",")[0]}
+                </p>
+              </div>
+            ))}
+          </section>
+
+          <section>
+            <h2>Skills</h2>
+            <ul>
+              {(personalData?.skill || "")
+                .split(",")
+                .map((s, i) => (
+                  <li key={i}>{s.trim()}</li>
+                ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2>Awards</h2>
+            <ul>
+              {(awardData?.awards || "")
+                .split(",")
+                .map((a, i) => (
+                  <li key={i}>{a}</li>
+                ))}
+            </ul>
+          </section>
+
+        </div>
+
+        {/* ---------- RIGHT CONTENT ---------- */}
+        <div className="t13-right">
+
+          <section>
+            <h2>Profile</h2>
+            <p>
+              {personalData?.summary ||
+                "Write a powerful professional summary here."}
+            </p>
+          </section>
+
+          <section>
+            <h2>Professional Experience</h2>
+            {Object.keys(workData?.workTitles || {}).map((key, i) => (
+              <div key={i} className="t13-right-block">
+                <b>{workData.workTitles[key]}</b>
+                <ul>
+                  {(workData.workDesc[`wDescription${i + 1}`] || "")
+                    .split(",")
+                    .map((d, idx) => (
+                      <li key={idx}>{d}</li>
+                    ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+
+          <section>
+            <h2>Projects</h2>
+            {Object.keys(projectData?.projectTitles || {}).map((key, i) => (
+              <div key={i} className="t13-right-block">
+                <b>{projectData.projectTitles[key]}</b>
+                <ul>
+                  {(projectData.projectDesc[`pDescription${i + 1}`] || "")
+                    .split(",")
+                    .map((d, idx) => (
+                      <li key={idx}>{d}</li>
+                    ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default Theme13;

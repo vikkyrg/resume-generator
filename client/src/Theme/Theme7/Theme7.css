@@ -1,0 +1,121 @@
+.theme7 {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 55px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
+.t7-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.t7-header h1 {
+  font-size: 38px;
+  letter-spacing: 2.5px;
+  margin-bottom: 8px;
+}
+
+.t7-header h2 {
+  font-size: 18px;
+  color: #777;
+  letter-spacing: 4px;
+}
+
+/* ================= BODY ================= */
+
+.t7-body {
+  display: flex;
+  gap: 50px;
+}
+
+/* ================= LEFT ================= */
+
+.t7-left {
+  width: 30%;
+}
+
+.t7-left h3 {
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border-bottom: 1.5px solid #ccc;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.t7-left p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.t7-left-block {
+  margin-top: 14px;
+}
+
+.t7-left-block strong {
+  font-size: 16px;
+}
+
+.t7-left ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.t7-left li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* ================= RIGHT ================= */
+
+.t7-right {
+  width: 70%;
+}
+
+.t7-right h3 {
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border-bottom: 1.5px solid #ccc;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.t7-right-block {
+  margin-top: 16px;
+}
+
+.t7-right-block strong {
+  font-size: 17px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.company {
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.t7-right p {
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+.t7-right ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.t7-right li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}

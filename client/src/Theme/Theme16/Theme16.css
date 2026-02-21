@@ -1,0 +1,138 @@
+/* ================= PAGE ================= */
+
+.theme16-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 44px 52px;
+  background: #ffffff;
+  font-family: "Inter", "Arial", sans-serif;
+  color: #222;
+}
+
+/* ================= HEADER ================= */
+
+.t16-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.t16-header-left img {
+  width: 105px;
+  height: 105px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.t16-header-right h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.t16-header-right h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* CONTACT LINE */
+
+.t16-contact {
+  display: flex;
+  gap: 18px;
+  font-size: 14.5px;
+}
+
+.t16-contact span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= SECTIONS ================= */
+
+.t16-section {
+  margin-bottom: 22px; /* ⬅ tighter section spacing */
+}
+
+.t16-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px; /* ⬅ tight */
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 4px;
+}
+
+/* ABOUT TEXT */
+
+.t16-section p {
+  font-size: 14.8px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ================= ROW LAYOUT ================= */
+
+.t16-row {
+  display: flex;
+  gap: 16px;            /* ⬅ single-tab spacing */
+  margin-bottom: 10px; /* ⬅ reduced */
+}
+
+/* YEAR COLUMN */
+
+.t16-year {
+  width: 80px;          /* ⬅ tighter column */
+  font-size: 14px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+
+.t16-content b {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 700;
+  margin-bottom: 2px;  /* ⬅ IMPORTANT: no gap */
+}
+
+.t16-content ul {
+  padding-left: 16px;  /* ⬅ clean indent */
+  margin: 2px 0 0 0;   /* ⬅ remove default gap */
+}
+
+.t16-content li {
+  font-size: 14.6px;
+  line-height: 1.55;
+  margin-bottom: 2px;  /* ⬅ tight bullet spacing */
+}
+
+/* ================= SKILLS ================= */
+
+.t16-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;        /* ⬅ neat, compact */
+}
+
+.t16-skills span {
+  font-size: 14.5px;
+}
+
+/* ================= AWARDS ================= */
+
+.t16-awards {
+  padding-left: 16px;
+  margin: 0;
+}
+
+.t16-awards li {
+  font-size: 14.6px;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}

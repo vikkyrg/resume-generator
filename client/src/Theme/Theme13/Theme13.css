@@ -1,0 +1,158 @@
+/* ================= PAGE ================= */
+
+.theme13-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.t13-header {
+  display: flex;
+  align-items: center;
+  padding: 36px 44px;
+  background: linear-gradient(165deg, #f3e6e2 65%, #ffffff 35%);
+}
+
+.t13-header-image img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+
+.t13-header-text {
+  margin-left: 34px;
+}
+
+.t13-header-text h1 {
+  font-size: 40px;              /* ⬆ Bigger name */
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.t13-header-text h3 {
+  font-size: 16px;              /* ⬆ Clear title */
+  letter-spacing: 4px;
+  margin-top: 8px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* ================= BODY ================= */
+
+.t13-body {
+  flex: 1;
+  display: flex;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+
+.t13-left {
+  width: 32%;
+  background: #e6e6e6;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+/* LEFT SECTIONS */
+
+.t13-left section {
+  margin-bottom: 34px;
+}
+
+.t13-left h2 {
+  font-size: 16px;              /* ⬆ Strong section title */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.t13-left p {
+  font-size: 15px;              /* ⬆ Readable body text */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.t13-left ul {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.t13-left li {
+  font-size: 15px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.t13-left-block {
+  margin-bottom: 14px;
+}
+
+.t13-left-block b {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ================= RIGHT CONTENT ================= */
+
+.t13-right {
+  width: 68%;
+  padding: 40px 46px;
+  box-sizing: border-box;
+}
+
+/* RIGHT SECTIONS */
+
+.t13-right section {
+  margin-bottom: 36px;
+}
+
+.t13-right h2 {
+  font-size: 17px;              /* ⬆ Clear hierarchy */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.t13-right p {
+  font-size: 16px;              /* ⬆ Professional paragraph */
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.t13-right-block {
+  margin-bottom: 26px;
+}
+
+.t13-right-block b {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.t13-right-block ul {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.t13-right-block li {
+  font-size: 15.5px;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}

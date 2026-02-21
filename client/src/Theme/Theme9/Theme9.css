@@ -1,0 +1,115 @@
+.theme9 {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 60px;
+  font-family: "Times New Roman", serif;
+  color: #111;
+  font-size: 15px;
+}
+
+/* ================= HEADER ================= */
+
+.t9-header {
+  text-align: center;
+}
+
+.t9-header h1 {
+  font-size: 34px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.t9-header h2 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+.t9-address {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.t9-contact {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* ================= LINE ================= */
+
+.t9-line {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 22px 0;
+}
+
+/* ================= SECTION ================= */
+
+.t9-section h3 {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 6px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* ================= ITEM ================= */
+
+.t9-item {
+  margin-bottom: 16px;
+}
+
+.t9-item-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t9-item strong {
+  font-size: 15px;
+}
+
+.t9-sub {
+  margin-top: 6px;
+}
+
+/* ================= LIST ================= */
+
+.t9-item ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.t9-item li {
+  margin-bottom: 6px;
+}
+
+/* ================= SKILLS ================= */
+
+.t9-skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 10px;
+}
+
+.t9-skill-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t9-skill-row span:last-child {
+  font-style: italic;
+}
+
+/* ================= AWARDS ================= */
+
+.t9-section ul {
+  padding-left: 20px;
+}
+
+.t9-section ul li {
+  margin-bottom: 6px;
+}

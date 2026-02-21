@@ -1,0 +1,111 @@
+.theme8 {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 15px;   /* Base font added */
+}
+
+/* ================= HEADER ================= */
+
+.t8-header h1 {
+  font-size: 40px;    /* Was 36px */
+  letter-spacing: 2px;
+}
+
+.t8-header h2 {
+  font-size: 20px;    /* Was 18px */
+  color: #666;
+  margin-top: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #2c3e50;
+}
+
+/* ================= BODY ================= */
+
+.t8-body {
+  display: flex;
+  margin-top: 35px;
+}
+
+/* LEFT COLUMN */
+
+.t8-left {
+  width: 30%;
+  padding-right: 25px;
+}
+
+.t8-section {
+  margin-bottom: 32px;
+}
+
+.t8-left h3 {
+  font-size: 18px;   /* Was 16px */
+  letter-spacing: 2px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 7px;
+  margin-bottom: 12px;
+}
+
+.t8-left p {
+  font-size: 15px;   /* Was 14px */
+  margin-bottom: 10px;
+}
+
+.t8-left ul {
+  padding-left: 20px;
+}
+
+.t8-left li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* CENTER LINE */
+
+.t8-line {
+  width: 2px;
+  background: #333;
+  margin: 0 25px;
+  position: relative;
+}
+
+.dot {
+  width: 14px;       /* Was 12px */
+  height: 14px;
+  background: #333;
+  border-radius: 50%;
+  position: relative;
+  left: -6px;
+  margin: 85px 0;
+}
+
+/* RIGHT COLUMN */
+
+.t8-right {
+  width: 65%;
+  padding-left: 10px;
+}
+
+.t8-right h3 {
+  font-size: 18px;   /* Was 16px */
+  letter-spacing: 2px;
+  border-bottom: 1px solid #999;
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+}
+
+.t8-right p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.item8 {
+  margin-bottom: 22px;
+}
+
+.item8 strong {
+  font-size: 16px;   /* Was 15px */
+}

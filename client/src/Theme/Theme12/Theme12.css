@@ -1,0 +1,142 @@
+/* ================= PAGE ================= */
+
+.theme12-page {
+  width: 210mm;
+  min-height: 297mm;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+
+  /* 🔑 PAGE HEIGHT CONTROL */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.t12-header {
+  background: #3b3f45;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 35px 40px;
+}
+
+.t12-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.t12-header-text {
+  margin-left: 25px;
+}
+
+.t12-header-text h1 {
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+.t12-header-text h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* ================= BODY ================= */
+
+.t12-body {
+  flex: 1;                 /* 🔑 fills remaining page height */
+  display: flex;
+}
+
+/* ================= LEFT COLUMN ================= */
+
+.t12-left {
+  width: 35%;
+  background: #f1e9e2;
+  padding: 35px 30px;
+  box-sizing: border-box;
+
+  /* ❌ REMOVE height: 100% (not needed) */
+}
+
+.t12-left h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  margin-top: 25px;
+}
+
+.t12-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.t12-contact-item svg {
+  font-size: 16px;
+}
+
+/* EDUCATION */
+
+.t12-edu-block {
+  margin-bottom: 14px;
+}
+
+.t12-edu-block b {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* SKILLS */
+
+.t12-skill-list {
+  padding-left: 18px;
+}
+
+.t12-skill-list li {
+  margin-bottom: 8px;
+}
+
+/* ================= RIGHT COLUMN ================= */
+
+.t12-right {
+  width: 65%;
+  padding: 35px 40px;
+  box-sizing: border-box;
+}
+
+/* SECTION HEADERS */
+
+.t12-right h3 {
+  font-size: 18px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+/* SUMMARY */
+
+.t12-summary {
+  margin-top: 12px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* WORK / PROJECT BLOCKS */
+
+.t12-work-block {
+  margin-bottom: 25px;
+}
+
+.t12-work-block ul {
+  padding-left: 20px;
+}
+
+.t12-work-block li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}

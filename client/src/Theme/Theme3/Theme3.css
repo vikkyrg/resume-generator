@@ -1,0 +1,79 @@
+.theme3 {
+  width: 794px;
+  min-height: 1123px;
+  background: white;
+  padding: 60px;
+  font-family: "Times New Roman", serif;
+  color: #222;
+  font-size: 18px;   /* Was 17px */
+}
+
+/* ================= HEADER ================= */
+
+.theme3-header h1 {
+  font-size: 54px;     /* Was 50px */
+  color: #9c4b4b;
+  margin-bottom: 12px;
+}
+
+.theme3-header .title {
+  font-size: 24px;     /* Was 22px */
+  font-weight: bold;
+}
+
+.theme3-header p {
+  margin: 6px 0;
+  font-size: 18px;     /* Was 17px */
+}
+
+/* ================= LINE ================= */
+
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 32px 0;
+}
+
+/* ================= ROW ================= */
+
+.row {
+  display: flex;
+  margin-top: 32px;
+}
+
+.left {
+  width: 180px;       /* Slightly wider */
+  font-size: 21px;    /* Was 19px */
+  font-weight: bold;
+}
+
+.right {
+  flex: 1;
+  font-size: 18px;    /* Was 17px */
+  line-height: 1.65;
+}
+
+/* ================= BLOCK ================= */
+
+.block {
+  margin-bottom: 22px;
+}
+
+.block strong {
+  font-size: 18px;    /* Was 17px */
+}
+
+.block p {
+  margin-top: 9px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* ================= SKILLS ================= */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 14px;
+  font-size: 18px;
+}

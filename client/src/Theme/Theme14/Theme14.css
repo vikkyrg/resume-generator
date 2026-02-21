@@ -1,0 +1,146 @@
+.theme14-page {
+  width: 210mm;
+  min-height: 297mm;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* HEADER */
+.t14-header {
+  display: flex;
+  padding: 34px 44px;
+  align-items: center;
+}
+
+.t14-photo {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+}
+
+.t14-header-text {
+  margin-left: 44px;
+}
+
+.t14-header-text h1 {
+  font-size: 48px;          /* ⬆ Bigger name */
+  letter-spacing: 5px;
+  font-weight: 800;         /* ⬆ Strong */
+  margin-bottom: 8px;
+}
+
+.t14-line {
+  width: 240px;
+  height: 2px;
+  background: #333;
+  margin: 12px 0;
+}
+
+.t14-header-text h2 {
+  font-size: 18px;          /* ⬆ Clear title */
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* CONTACT BAR */
+.t14-contact {
+  background: #333;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 16px 44px;
+  font-size: 15px;          /* ⬆ */
+}
+
+.t14-contact div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* PROFILE */
+.t14-profile {
+  padding: 30px 44px;
+}
+
+.t14-profile h3 {
+  font-size: 16px;          /* ⬆ */
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.t14-profile p {
+  font-size: 16px;          /* ⬆ */
+  line-height: 1.8;
+}
+
+/* BODY */
+.t14-body {
+  display: flex;
+  padding: 12px 44px 44px;
+}
+
+/* LEFT */
+.t14-left {
+  width: 32%;
+  padding-right: 32px;
+}
+
+.t14-box {
+  background: #444;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 15px;          /* ⬆ */
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin: 34px 0 20px;
+}
+
+/* ITEMS */
+.t14-item {
+  margin-bottom: 26px;
+}
+
+.t14-item span {
+  font-size: 13px;
+  color: #777;
+}
+
+.t14-item strong {
+  display: block;
+  font-size: 16px;          /* ⬆ */
+  font-weight: 700;
+  margin: 6px 0;
+}
+
+.t14-item p {
+  font-size: 15px;          /* ⬆ */
+  line-height: 1.7;
+}
+
+/* LISTS */
+.t14-left ul {
+  padding-left: 20px;
+}
+
+.t14-left li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* RIGHT */
+.t14-right {
+  width: 68%;
+  padding-left: 34px;
+  border-left: 1px solid #ccc;
+}
+
+.t14-right h3 {
+  font-size: 16px;          /* ⬆ */
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}

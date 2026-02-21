@@ -1,0 +1,108 @@
+.theme5 {
+  width: 794px;
+  min-height: 1123px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;     /* ✅ KEY FIX */
+}
+
+/* ================= HEADER ================= */
+
+.theme5-header {
+  background: #3f4042;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.theme5-name-box {
+  border: 2px solid #cccccc;
+  padding: 15px 45px;
+  text-align: center;
+}
+
+.theme5-name-box h1 {
+  color: white;
+  font-size: 32px;
+  margin: 0;
+}
+
+.theme5-name-box p {
+  color: #ddd;
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* ================= BODY ================= */
+
+.theme5-body {
+  display: flex;
+  flex: 1;                    /* ✅ fills remaining height */
+}
+
+/* ================= LEFT ================= */
+
+.theme5-left {
+  width: 32%;
+  background: #f1f1f1;
+  padding: 40px 25px;
+}
+
+/* Headings */
+
+.theme5-left h3 {
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-top: 25px;
+  letter-spacing: 1px;
+}
+
+.theme5-left p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* ================= SKILLS ================= */
+
+.skill-row {
+  margin-top: 12px;
+}
+
+.skill-row span {
+  font-size: 14px;
+}
+
+/* ================= RIGHT ================= */
+
+.theme5-right {
+  width: 68%;
+  padding: 40px 40px;
+}
+
+.theme5-right h2 {
+  font-size: 18px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+  margin-top: 25px;
+  letter-spacing: 1px;
+}
+
+.theme5-right p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* ================= BLOCK ================= */
+
+.right-block {
+  margin-top: 16px;
+}
+
+.right-block strong {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}

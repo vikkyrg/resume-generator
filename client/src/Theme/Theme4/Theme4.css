@@ -1,0 +1,97 @@
+.theme4 {
+  width: 794px;
+  min-height: 1123px;
+  display: flex;
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 16px;          /* Increased base font */
+  line-height: 1.6;
+}
+
+/* ================= LEFT PANEL ================= */
+
+.theme4-left {
+  width: 35%;
+  background: #a7d7f3;
+  padding: 42px;
+}
+
+.theme4-left h1 {
+  font-size: 36px;          /* Strong name visibility */
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.contact-item {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.theme4-left h2 {
+  margin-top: 34px;
+  font-size: 20px;          /* Clear section separation */
+  border-bottom: 2px solid black;
+  padding-bottom: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.theme4-left p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.theme4-left ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.theme4-left li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.edu-block {
+  margin-top: 14px;
+}
+
+.edu-block strong {
+  font-size: 17px;          /* Degree / course highlight */
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.theme4-right {
+  width: 65%;
+  background: #ffffff;
+  padding: 42px;
+}
+
+.theme4-right h3 {
+  margin-top: 28px;
+  font-size: 20px;          /* Section headers */
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.theme4-right p {
+  margin-top: 12px;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.right-block {
+  margin-top: 18px;
+}
+
+.right-block strong {
+  font-size: 17px;          /* Job title / project title */
+  display: block;
+  margin-bottom: 4px;
+}

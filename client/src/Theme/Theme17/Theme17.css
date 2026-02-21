@@ -1,0 +1,136 @@
+/* ================= PAGE ================= */
+
+.theme17-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 48px 56px;
+  background: #ffffff;
+  font-family: "Inter", "Arial", sans-serif;
+  color: #222;
+}
+
+/* ================= HEADER ================= */
+
+.t17-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.t17-header h1 {
+  font-size: 36px;              /* ⬆ professional name size */
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.t17-header h2 {
+  font-size: 18px;              /* ⬆ job title */
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+/* CONTACT */
+
+.t17-contact {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  font-size: 15px;              /* ⬆ readable */
+}
+
+.t17-contact span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* DIVIDER */
+
+.t17-divider {
+  border: none;
+  border-top: 1px solid #aaa;
+  margin: 26px 0;
+}
+
+/* ================= SECTIONS ================= */
+
+.t17-section {
+  margin-bottom: 26px;
+}
+
+.t17-section h3 {
+  font-size: 16.5px;            /* ⬆ section heading */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* ABOUT */
+
+.t17-section p {
+  font-size: 15.2px;            /* ⬆ body text */
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ================= ROW LAYOUT ================= */
+
+.t17-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 14px;
+}
+
+.t17-year {
+  width: 84px;
+  font-size: 14.8px;
+  color: #555;
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+
+.t17-content b {
+  display: block;
+  font-size: 16px;              /* ⬆ role / degree */
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.t17-content ul {
+  padding-left: 18px;
+  margin: 2px 0 0 0;
+}
+
+.t17-content li {
+  font-size: 15px;              /* ⬆ bullet text */
+  line-height: 1.65;
+  margin-bottom: 4px;
+}
+
+/* ================= SKILLS ================= */
+
+.t17-skills {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 20px;
+  padding-left: 18px;
+}
+
+.t17-skills li {
+  font-size: 15px;
+}
+
+/* ================= AWARDS ================= */
+
+.t17-awards {
+  padding-left: 18px;
+}
+
+.t17-awards li {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}

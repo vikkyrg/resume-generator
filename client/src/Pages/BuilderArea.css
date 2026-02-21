@@ -1,0 +1,32 @@
+/* Responsive Layout */
+
+#main-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Resume preview */
+#theme-box-border {
+  width: 100%;
+  max-width: 794px;
+  background: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  #main-box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Spinner center */
+#spinner {
+  position: fixed !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

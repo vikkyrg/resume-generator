@@ -1,0 +1,115 @@
+.theme1-container {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #111;
+}
+
+/* ================= HEADER ================= */
+
+.t1-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.t1-header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.t1-summary {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.75;
+  text-indent: 16px;   /* only first line indented */
+}
+
+
+.t1-contact {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.t1-header h2 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+/* ================= SECTION ================= */
+
+.t1-section {
+  margin-top: 25px;
+}
+
+.t1-section h3 {
+  background: #d7ebe6;
+  padding: 8px 12px;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+/* ================= SKILLS ================= */
+
+.t1-skills {
+  margin-top: 10px;
+}
+
+.skill-pill {
+  display: inline-block;
+  background: #e6f2ef;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* ================= ITEMS ================= */
+
+.t1-item {
+  margin-top: 10px;
+}
+
+.t1-item b {
+  font-size: 15px;
+}
+
+.t1-item ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.t1-item li {
+  margin-bottom: 4px;
+}
+/* ================= THEME1 HEADER ICONS ================= */
+
+.t1-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.t1-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.t1-icon {
+  font-size: 15px;
+  color: #7fbdb1;   /* ✅ Theme1 mint color */
+}
+
+.t1-separator {
+  margin: 0 6px;
+  color: #999;
+}
+

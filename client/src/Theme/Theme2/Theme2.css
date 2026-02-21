@@ -1,0 +1,155 @@
+.theme2-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 42px;
+  background: white;
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 16px;   /* Increased base font */
+  line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
+
+.t2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.t2-header-left {
+  width: 70%;
+}
+
+.t2-header-left h1 {
+  font-size: 40px;     /* Increased for strong first impact */
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.t2-header-left h3 {
+  font-size: 22px;     /* More premium subtitle */
+  letter-spacing: 2.5px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.t2-header-left p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.t2-header-right img {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= BODY ================= */
+
+.t2-body {
+  display: flex;
+  margin-top: 40px;
+}
+
+/* LEFT COLUMN */
+
+.t2-left {
+  width: 30%;
+  padding-right: 24px;
+}
+
+.t2-left h2 {
+  font-size: 19px;     /* Section title emphasis */
+  margin-bottom: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.t2-left p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.t2-left ul {
+  padding-left: 22px;
+}
+
+.t2-left li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* CENTER LINE */
+
+.t2-line {
+  width: 2px;
+  background: #2c3e50;
+  margin: 0 24px;
+}
+
+/* RIGHT COLUMN */
+
+.t2-right {
+  width: 70%;
+}
+
+.t2-right h2 {
+  font-size: 19px;
+  margin-bottom: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.t2-block {
+  margin-bottom: 26px;
+}
+
+.t2-block b {
+  font-size: 17px;    /* Strong role / degree highlight */
+  display: block;
+  margin-bottom: 4px;
+}
+
+.t2-block ul {
+  padding-left: 22px;
+}
+
+.t2-block li {
+  margin-bottom: 9px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* DIVIDERS */
+
+hr {
+  border: none;
+  border-top: 1px solid #aaa;
+  margin: 30px 0;
+}
+
+.t2-divider {
+  height: 1px;
+  background: #aaa;
+  margin: 30px 0;
+}
+/* ================= CONTACT ICONS ================= */
+
+.t2-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.t2-icon {
+  font-size: 18px;
+  color: #2c3e50;   /* matches vertical line color */
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+

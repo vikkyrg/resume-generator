@@ -1,0 +1,167 @@
+/* OUTER PAGE */
+.theme19-page {
+  background: #ffffff;
+  padding: 30px 0;
+}
+
+/* RESUME SHEET */
+.theme19-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: auto;
+  background: #f6f2ea;
+  padding: 48px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2b2b2b;
+}
+
+/* HEADER */
+.t19-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.t19-header h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.t19-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.t19-subtitle span {
+  width: 80px;
+  height: 1.5px;
+  background: #555;
+}
+
+.t19-subtitle h3 {
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* BODY */
+.t19-body {
+  display: flex;
+  margin-top: 32px;
+}
+
+/* LEFT COLUMN */
+.t19-left {
+  width: 30%;
+  padding-right: 34px;
+}
+
+/* CONTACT (ICON FIX HERE) */
+.t19-contact {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 36px;
+}
+
+.t19-contact li {
+  display: flex;
+  align-items: center;          /* ✅ FIX */
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.t19-contact li svg {
+  width: 16px;                  /* ✅ FIX */
+  height: 16px;
+  min-width: 16px;              /* ✅ prevents jump */
+  stroke-width: 2;
+  color: #2b2b2b;
+}
+
+/* SECTION */
+.t19-section {
+  margin-bottom: 36px;
+}
+
+.t19-section h2 {
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* SKILLS */
+.t19-left ul {
+  padding-left: 18px;
+}
+
+.t19-left li {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* EDUCATION */
+.t19-edu {
+  margin-bottom: 14px;
+}
+
+.t19-edu b {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.t19-edu p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* DIVIDER */
+.t19-divider {
+  width: 1.5px;
+  background: #777;
+  margin: 0 34px;
+}
+
+/* RIGHT COLUMN */
+.t19-right {
+  width: 70%;
+  padding-left: 34px;
+}
+
+.t19-right p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+/* EXPERIENCE / PROJECTS */
+.t19-exp {
+  margin-bottom: 24px;
+}
+
+.t19-exp b {
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.t19-exp ul {
+  padding-left: 20px;
+}
+
+.t19-exp li {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}

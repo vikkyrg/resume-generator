@@ -1,0 +1,104 @@
+.theme6 {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  color: #111;
+  font-size: 15px;   /* Base font added */
+}
+
+/* ================= HEADER ================= */
+
+.theme6-header {
+  background: linear-gradient(to right, #1f2f46, #2f4f6f);
+  color: white;
+  padding: 35px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left h1 {
+  font-size: 36px;      /* Was 32px */
+  margin-bottom: 8px;
+}
+
+.header-left h2 {
+  font-size: 20px;      /* Was 18px */
+  letter-spacing: 2px;
+  color: #9fd3ff;
+}
+
+.header-right img {
+  width: 140px;        /* Was 120px */
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #7fd1c8;
+}
+
+/* ================= BODY ================= */
+
+.theme6-body {
+  display: flex;
+  padding: 45px;
+}
+
+/* LEFT COLUMN */
+
+.theme6-left {
+  width: 30%;
+  padding-right: 30px;
+  border-right: 2px solid #ccc;
+}
+
+.theme6-left h3 {
+  font-size: 18px;     /* Was 16px */
+  margin-bottom: 12px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+}
+
+.theme6-left p {
+  margin-bottom: 12px;
+  font-size: 15px;     /* Was 14px */
+}
+
+.theme6-left ul {
+  padding-left: 20px;
+}
+
+.theme6-left li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* RIGHT COLUMN */
+
+.theme6-right {
+  width: 70%;
+  padding-left: 30px;
+}
+
+.theme6-right h3 {
+  font-size: 18px;     /* Was 16px */
+  margin-top: 24px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+}
+
+.theme6-right p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* BLOCKS */
+
+.block6 {
+  margin-top: 14px;
+}
+
+.block6 strong {
+  font-size: 16px;     /* Was 15px */
+}

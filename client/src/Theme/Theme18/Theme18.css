@@ -1,0 +1,126 @@
+.theme18-page {
+  width: 210mm;
+  min-height: 297mm;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #2c2c2c;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.t18-header {
+  position: relative;
+  margin: 25px;
+  background: #dde6eb;
+  border-radius: 80px 20px 20px 80px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  padding-left: 180px;
+}
+
+.t18-photo {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  border: 10px solid white;
+}
+
+.t18-header-text h1 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.t18-header-text h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ================= BODY ================= */
+
+.t18-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ================= LEFT ================= */
+
+.t18-left {
+  width: 35%;
+  background: #eef3f6;
+  padding: 35px;
+}
+
+.t18-contact-card {
+  background: #dde6eb;
+  padding: 22px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.t18-contact-card p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.t18-icon {
+  font-size: 16px;
+  margin-top: 2px; /* 🔑 mild downward alignment */
+  color: #444;
+}
+
+.t18-section h2 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.t18-left li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================= RIGHT ================= */
+
+.t18-right {
+  width: 65%;
+  padding: 40px;
+}
+
+.t18-about {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.t18-item b {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.t18-right li {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================= DIVIDER ================= */
+
+.t18-divider {
+  height: 1px;
+  background: #bfc7cc;
+  margin: 26px 0;
+}

@@ -1,0 +1,146 @@
+.theme11-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;          /* ✅ BODY WHITE */
+  font-family: "Georgia", serif;
+  color: #333;
+}
+
+/* ================= HEADER ================= */
+
+.theme11-header {
+  background: #dedccb;          /* ✅ HEADER COLOR ONLY */
+  padding: 50px 40px;
+}
+
+.theme11-header h1 {
+  font-size: 50px;              /* 🔥 increased */
+  letter-spacing: 2.5px;
+  margin-bottom: 8px;
+  color: #4f615b;
+  font-weight: 700;
+}
+
+.theme11-header h2 {
+  font-size: 20px;              /* 🔥 increased */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4f615b;
+  font-weight: 500;
+}
+
+/* ================= CONTENT ================= */
+
+.theme11-content {
+  display: flex;
+  padding: 45px 40px;
+  background: #ffffff;          /* ✅ ENSURE WHITE BODY */
+}
+
+/* ================= LEFT COLUMN ================= */
+
+.theme11-left {
+  width: 35%;
+  padding-right: 32px;
+  border-right: 2px solid #d6c7a1;
+}
+
+.theme11-left h3 {
+  font-size: 16px;              /* 🔥 increased */
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #9b6a2f;
+  margin: 30px 0 14px;
+  font-weight: 700;
+}
+
+.theme11-left p {
+  font-size: 15.5px;            /* 🔥 increased */
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.theme11-left ul {
+  padding-left: 20px;
+}
+
+.theme11-left li {
+  font-size: 15.5px;            /* 🔥 increased */
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+/* ================= RIGHT COLUMN ================= */
+
+.theme11-right {
+  width: 65%;
+  padding-left: 32px;
+}
+
+.theme11-right h3 {
+  font-size: 16px;              /* 🔥 increased */
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #9b6a2f;
+  margin: 30px 0 14px;
+  font-weight: 700;
+}
+
+.theme11-summary {
+  font-size: 16.5px;            /* 🔥 increased */
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+/* ================= BLOCKS ================= */
+
+.theme11-block {
+  margin-bottom: 22px;
+}
+
+.theme11-block b {
+  display: block;
+  font-size: 16.5px;            /* 🔥 increased */
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.theme11-block ul {
+  padding-left: 20px;
+}
+
+.theme11-block li {
+  font-size: 15.5px;            /* 🔥 increased */
+  line-height: 1.8;
+  margin-bottom: 7px;
+}
+
+/* ================= CONTACT ICON ALIGN – FINAL FIX ================= */
+
+.theme11-contact {
+  margin-top: 14px;
+}
+
+.theme11-contact-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  font-size: 15.5px;            /* 🔥 increased */
+  margin-bottom: 12px;
+}
+
+/* 🔥 FORCE ICON INLINE */
+.theme11-icon {
+  display: inline-block !important;
+  width: 18px;                  /* 🔥 slightly bigger */
+  height: 18px;
+  color: #9b6a2f;
+  flex-shrink: 0;
+}
+
+/* 🔥 FORCE TEXT INLINE */
+.theme11-text {
+  display: inline-block;
+  line-height: 1.8;
+}

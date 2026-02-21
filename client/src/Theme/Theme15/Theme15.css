@@ -1,0 +1,177 @@
+.theme15-page {
+  width: 210mm;
+  min-height: 297mm;
+  display: flex;
+  font-family: "Inter", "Arial", sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* ================= LEFT SIDEBAR ================= */
+
+.t15-sidebar {
+  width: 32%;
+  background: #2f3b4a;
+  color: #ffffff;
+  padding: 44px 32px;
+}
+
+/* PROFILE IMAGE */
+
+.t15-profile-img {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.t15-profile-img img {
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+}
+
+/* SIDEBAR SECTIONS */
+
+.t15-section {
+  margin-bottom: 30px;
+}
+
+/* SECTION TITLE */
+
+.t15-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;           /* professional */
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+}
+
+.t15-title svg {
+  font-size: 17px;
+}
+
+/* ABOUT TEXT */
+
+.t15-text {
+  font-size: 14.8px;         /* ideal body size */
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* CONTACT ROW */
+
+.t15-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14.8px;
+  margin-bottom: 10px;
+}
+
+.t15-row svg {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* LISTS */
+
+.t15-list {
+  padding-left: 20px;
+}
+
+.t15-list li {
+  font-size: 14.8px;
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+/* ================= RIGHT CONTENT ================= */
+
+.t15-content {
+  width: 68%;
+  padding: 48px 54px;
+}
+
+/* HEADER */
+
+.t15-header h1 {
+  font-size: 36px;            /* safe & strong */
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: 0.4px;
+}
+
+.t15-header h2 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 34px;
+  letter-spacing: 0.8px;
+}
+
+/* SECTION BLOCKS */
+
+.t15-block {
+  margin-bottom: 38px;
+}
+
+.t15-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ================= TIMELINE ================= */
+
+.t15-timeline-item {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 22px;
+  border-left: 2px solid #cfd6dc;
+}
+
+.t15-dot {
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #2f3b4a;
+  border-radius: 50%;
+}
+
+.t15-timeline-item b {
+  font-size: 15.5px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.t15-timeline-item ul {
+  padding-left: 20px;
+}
+
+.t15-timeline-item li {
+  font-size: 14.8px;
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+
+/* ================= AWARDS ================= */
+
+.t15-awards {
+  padding-left: 20px;
+}
+
+.t15-awards li {
+  font-size: 14.8px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}

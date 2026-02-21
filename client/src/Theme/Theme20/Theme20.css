@@ -1,0 +1,164 @@
+/* ================= PAGE ================= */
+
+.theme20-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 48px 56px;
+  background: #ffffff;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #222;
+}
+
+/* ================= HEADER ================= */
+
+.t20-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.t20-header-left h1 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.t20-name-underline {
+  width: 160px;
+  height: 2px;
+  background: #444;
+  margin: 6px 0 10px;
+}
+
+.t20-header-left h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
+}
+
+.t20-header-right {
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+.t20-header-right div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TOP DIVIDER */
+
+.t20-top-divider {
+  border-top: 3px solid #444;
+  margin: 24px 0 34px;
+}
+
+/* ================= BODY ================= */
+
+.t20-body {
+  display: flex;
+}
+
+/* LEFT COLUMN */
+
+.t20-left {
+  width: 48%;
+  padding-right: 28px;
+}
+
+/* RIGHT COLUMN */
+
+.t20-right {
+  width: 52%;
+  padding-left: 28px;
+}
+
+/* VERTICAL DIVIDER */
+
+.t20-vertical-divider {
+  width: 1px;
+  background: #999;
+}
+
+/* ================= SECTIONS ================= */
+
+.t20-section {
+  margin-bottom: 34px;
+}
+
+.t20-section h3 {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.t20-section h3 span {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #444;
+}
+
+/* TEXT */
+
+.t20-section p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* EDUCATION BLOCK */
+
+.t20-edu {
+  margin-bottom: 16px;
+}
+
+.t20-edu b {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.t20-sub {
+  display: block;
+  font-size: 14.2px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* LISTS */
+
+.t20-list {
+  padding-left: 20px;
+}
+
+.t20-list li {
+  font-size: 15.8px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+/* EXPERIENCE / PROJECTS */
+
+.t20-exp {
+  margin-bottom: 22px;
+}
+
+.t20-exp b {
+  font-size: 16.5px;
+  font-weight: 700;
+}
+
+.t20-exp ul {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+.t20-exp li {
+  font-size: 15.8px;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
