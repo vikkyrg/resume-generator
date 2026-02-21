@@ -1,0 +1,39 @@
+# ======================
+# Root Ignore Rules
+# ======================
+
+# Node Modules (for both client & server)
+node_modules
+client/node_modules
+server/node_modules
+
+# Environment Files (Never push secrets)
+.env
+server/.env
+client/.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# React Build Files
+client/build
+build
+dist
+coverage
+
+# Uploads Folder (user uploaded images / files)
+server/uploads
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# PNP (if exists)
+.pnp
+.pnp.js
