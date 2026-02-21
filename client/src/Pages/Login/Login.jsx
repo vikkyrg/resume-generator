@@ -59,8 +59,8 @@ const Login = () => {
     setEmailError("");
 
     const url = isSignup
-      ? "/api/auth/signup"
-      : "/api/auth/login";
+  ? `${process.env.REACT_APP_API_URL}/api/auth/signup`
+  : `${process.env.REACT_APP_API_URL}/api/auth/login`;
 
     try {
       const response = await fetch(url, {
