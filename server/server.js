@@ -12,21 +12,33 @@ dotenv.config();
 
 // ================= APP INIT =================
 const app = express();
+
+// ✅ FIXED CORS (Allow Local + Any Vercel Deployment)
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://resume-generator.vercel.app" // your frontend URL
-    ],
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps / postman)
+      if (!origin) return callback(null, true);
+
+      if (
+        origin.includes("localhost") ||
+        origin.includes("vercel.app")
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("CORS blocked: " + origin));
+    },
     credentials: true,
   })
 );
+
 app.use(express.json());
 
 // ================= DATABASE =================
 connectDB(); // uses MONGO_URI from .env
 
-// ================= ENSURE UPLOAD FOLDER EXISTS (IMPORTANT FOR RENDER) =================
+// ================= ENSURE UPLOAD FOLDER EXISTS =================
 const uploadPath = path.join(__dirname, "uploads");
 
 if (!fs.existsSync(uploadPath)) {
@@ -68,7 +80,7 @@ app.use("/api/resumes", require("./routes/resumeRoutes"));
 // Admin Routes
 app.use("/api/admin", require("./routes/adminRoutes"));
 
-// User Routes (separate from admin)
+// User Routes
 app.use("/api/users", require("./routes/userRoutes"));
 
 // ================= TEMPLATE ROUTES =================
@@ -128,7 +140,7 @@ app.delete("/api/templates/:id", async (req, res) => {
   }
 });
 
-// ================= HEALTH CHECK ROUTE (FOR RENDER TEST) =================
+// ================= HEALTH CHECK =================
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
