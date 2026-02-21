@@ -15,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 import { Link as ReachLink, useNavigate } from "react-router-dom";
 
+const API = process.env.REACT_APP_API_URL;
+
 const Login = () => {
 
   const [isSignup, setIsSignup] = useState(false);
@@ -59,8 +61,8 @@ const Login = () => {
     setEmailError("");
 
     const url = isSignup
-  ? `${process.env.REACT_APP_API_URL}/api/auth/signup`
-  : `${process.env.REACT_APP_API_URL}/api/auth/login`;
+  ? `${API}/api/auth/signup`
+  : `${API}/api/auth/login`;
 
     try {
       const response = await fetch(url, {
