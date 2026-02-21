@@ -16,6 +16,7 @@ import {
 import { Link as ReachLink, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
+console.log("API URL =", API);
 
 const Login = () => {
 
