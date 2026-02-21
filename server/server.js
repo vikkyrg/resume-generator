@@ -13,30 +13,28 @@ dotenv.config();
 // ================= APP INIT =================
 const app = express();
 
-// ✅ FIXED CORS (Allow Local + Any Vercel Deployment)
+// ✅ IMPORTANT FOR RENDER (behind proxy)
+app.set("trust proxy", 1);
+
+// ================= CORS FIX (VERCEL + LOCALHOST + PREFLIGHT) =================
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like mobile apps / postman)
-      if (!origin) return callback(null, true);
-
-      if (
-        origin.includes("localhost") ||
-        origin.includes("vercel.app")
-      ) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("CORS blocked: " + origin));
-    },
+    origin: true, // allow ALL origins (needed for dynamic vercel URLs)
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-app.use(express.json());
+// ✅ Handle preflight manually (fixes 405 error)
+app.options("*", cors());
+
+// ================= BODY PARSER =================
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true }));
 
 // ================= DATABASE =================
-connectDB(); // uses MONGO_URI from .env
+connectDB();
 
 // ================= ENSURE UPLOAD FOLDER EXISTS =================
 const uploadPath = path.join(__dirname, "uploads");
@@ -91,6 +89,7 @@ app.get("/api/templates", async (req, res) => {
     const templates = await Template.find();
     res.json(templates);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Error fetching templates" });
   }
 });
@@ -107,6 +106,7 @@ app.post("/api/templates", upload.single("image"), async (req, res) => {
     await newTemplate.save();
     res.json({ message: "Template Added" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Error adding template" });
   }
 });
@@ -126,6 +126,7 @@ app.put("/api/templates/:id", upload.single("image"), async (req, res) => {
     await Template.findByIdAndUpdate(req.params.id, updateData);
     res.json({ message: "Template Updated" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Error updating template" });
   }
 });
@@ -136,18 +137,19 @@ app.delete("/api/templates/:id", async (req, res) => {
     await Template.findByIdAndDelete(req.params.id);
     res.json({ message: "Template Deleted" });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: "Error deleting template" });
   }
 });
 
 // ================= HEALTH CHECK =================
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("✅ API is running...");
 });
 
 // ================= SERVER =================
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
