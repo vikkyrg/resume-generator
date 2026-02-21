@@ -85,7 +85,7 @@ const UserDataCollect = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
         try {
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/resume/get`, {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/resumes/get`, {
                 headers: { Authorization: token }
             });
             if (res.data) {
@@ -112,7 +112,7 @@ const UserDataCollect = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/api/resume/save`, 
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/resumes/save`, 
                 { personalData, projectData, educationData, workData, awardData, themeKey },
                 { headers: { Authorization: token } }
             );
@@ -189,8 +189,8 @@ const clearResumeData = async () => {
     if (!window.confirm("Clear all resume data?")) return;
 
     try {
-        await axios.delete(`${process.env.REACT_APP_API_URL}/api/resume/clear`, {
-            headers: { Authorization: token }
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/resumes/clear`, {
+            headers: { Authorization: `Bearer ${token}` }
         });
 
         // Reset all fields
