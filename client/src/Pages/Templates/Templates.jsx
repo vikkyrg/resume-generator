@@ -23,7 +23,7 @@ const Templates = () => {
 
   const fetchTemplates = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/templates");
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/templates`);
       const data = await res.json();
       setTemplates(data);
     } catch (error) {
@@ -85,7 +85,7 @@ const Templates = () => {
                   height={{ base: "220px", md: "300px" }}
                 >
                   <Image
-                    src={`http://localhost:5000/uploads/${temp.image}`}
+                    src={`${process.env.REACT_APP_API_URL}/uploads/${temp.image}`}
                     alt={temp.name}
                     w="100%"
                     h="100%"

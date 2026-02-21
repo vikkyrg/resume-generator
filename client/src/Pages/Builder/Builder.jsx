@@ -16,7 +16,7 @@ const Builder = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/api/templates")
+    fetch(`${process.env.REACT_APP_API_URL}/api/templates`)
       .then((res) => res.json())
       .then((data) => {
 

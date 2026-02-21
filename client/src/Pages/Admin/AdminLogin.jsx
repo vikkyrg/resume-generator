@@ -31,7 +31,7 @@ const AdminLogin = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/login",
+        `${process.env.REACT_APP_API_URL}/api/admin/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

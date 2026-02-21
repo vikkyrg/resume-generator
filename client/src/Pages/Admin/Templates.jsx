@@ -43,7 +43,7 @@ const Templates = () => {
   const fetchTemplates = async () => {
 
     const res = await fetch(
-      "http://localhost:5000/api/templates"
+      `${process.env.REACT_APP_API_URL}/api/templates`
     );
 
     const data = await res.json();
@@ -70,7 +70,7 @@ const Templates = () => {
     if (editingId) {
 
       await fetch(
-        `http://localhost:5000/api/templates/${editingId}`,
+        `${process.env.REACT_APP_API_URL}/api/templates/${editingId}`,
         {
           method: "PUT",
           body: formData
@@ -80,7 +80,7 @@ const Templates = () => {
     } else {
 
       await fetch(
-        "http://localhost:5000/api/templates",
+        `${process.env.REACT_APP_API_URL}/api/templates`,
         {
           method: "POST",
           body: formData
@@ -145,7 +145,7 @@ const Templates = () => {
   const handleDelete = async () => {
 
     await fetch(
-      `http://localhost:5000/api/templates/${deleteId}`,
+      `${process.env.REACT_APP_API_URL}/api/templates/${deleteId}`,
       {
         method: "DELETE"
       }
@@ -224,7 +224,7 @@ const Templates = () => {
           >
 
             <Image
-              src={`http://localhost:5000/uploads/${temp.image}`}
+              src={`${process.env.REACT_APP_API_URL}/uploads/${temp.image}`}
               alt={temp.name}
               mb={3}
               borderRadius="md"

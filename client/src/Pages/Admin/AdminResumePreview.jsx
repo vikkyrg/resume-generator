@@ -34,7 +34,7 @@ const AdminResumePreview = () => {
   const fetchResume = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/admin/resume/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/admin/resume/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("adminToken")}`

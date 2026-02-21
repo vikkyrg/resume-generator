@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   // -------------------
   const fetchUserCount = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/users", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/users`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   // -------------------
   const fetchResumeCount = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/resumes");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/resumes`);
       setResumeCount(res.data.length);
     } catch (error) {
       console.error("Resume Count Error:", error);
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
   // -------------------
   const fetchTemplateCount = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/templates");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/templates`);
       setTemplateCount(res.data.length);
     } catch (error) {
       console.error("Template Count Error:", error);

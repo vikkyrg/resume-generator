@@ -37,7 +37,7 @@ export default function Introduction() {
   }, [setSelectBtn]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/templates")
+    fetch(`${process.env.REACT_APP_API_URL}/api/templates`)
       .then(res => res.json())
       .then(data => setTemplates(data));
   }, []);
@@ -245,7 +245,7 @@ export default function Introduction() {
                       height="300px"
                     >
                       <Image
-                        src={`http://localhost:5000/uploads/${temp.image}`}
+                        src={`${process.env.REACT_APP_API_URL}/uploads/${temp.image}`}
                         alt={temp.name}
                         w="100%"
                         h="100%"

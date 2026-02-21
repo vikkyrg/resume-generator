@@ -44,7 +44,7 @@ const AdminProfile = () => {
         const token = localStorage.getItem("adminToken");
 
         const res = await axios.get(
-          "http://localhost:5000/api/admin/profile",
+          `${process.env.REACT_APP_API_URL}/api/admin/profile`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -78,7 +78,7 @@ const AdminProfile = () => {
       setLoading(true);
 
       await axios.put(
-        "http://localhost:5000/api/admin/profile",
+        `${process.env.REACT_APP_API_URL}/api/admin/profile`,
         admin,
         {
           headers: {
@@ -138,7 +138,7 @@ const AdminProfile = () => {
       setLoading(true);
 
       await axios.put(
-        "http://localhost:5000/api/admin/change-password",
+        `${process.env.REACT_APP_API_URL}/api/admin/change-password`,
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,

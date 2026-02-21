@@ -33,7 +33,7 @@ const Resumes = () => {
   const fetchResumes = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/resumes"
+        `${process.env.REACT_APP_API_URL}/api/resumes`
       );
 
       setResumes(res.data || []);
@@ -55,7 +55,7 @@ const Resumes = () => {
     if (window.confirm("Are you sure you want to delete this resume?")) {
       try {
         await axios.delete(
-          `http://localhost:5000/api/resumes/${id}`
+          `${process.env.REACT_APP_API_URL}/api/resumes/${id}`
         );
         fetchResumes();
       } catch (error) {
