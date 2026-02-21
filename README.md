@@ -55,7 +55,7 @@ This application allows users to create professional resumes, analyze ATS scores
 ### 1️⃣ Install Backend
     cd server
     npm install
-    npm run dev
+    npm start
 
 ### 2️⃣ Install Frontend(new terminal)
     cd client
