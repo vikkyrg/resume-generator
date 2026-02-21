@@ -5,10 +5,10 @@ const User = require("../models/User");
 
 // ===============================
 // GET ALL USERS
+// FINAL API → /api/users
 // ===============================
-router.get("/users", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-
     const users = await User.find().select(
       "_id name email role status createdAt updatedAt"
     );
@@ -27,8 +27,9 @@ router.get("/users", async (req, res) => {
 
 // ===============================
 // GET SINGLE USER BY ID
+// FINAL API → /api/users/:id
 // ===============================
-router.get("/users/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
 
     const user = await User.findById(req.params.id)
@@ -48,7 +49,8 @@ router.get("/users/:id", async (req, res) => {
 
 
 // ===============================
-// FIX OLD USERS (RUN ONCE)
+// FIX OLD USERS (RUN ONLY ONCE IF NEEDED)
+// API → /api/users/fix-users
 // ===============================
 router.get("/fix-users", async (req, res) => {
   try {
@@ -70,5 +72,4 @@ router.get("/fix-users", async (req, res) => {
 });
 
 
-// ===============================
 module.exports = router;

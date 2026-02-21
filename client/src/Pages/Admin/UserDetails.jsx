@@ -19,37 +19,48 @@ const UserDetails = () => {
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetchUser();
-  }, []);
+  }, [id]);
 
   // ============================
   // FETCH USER
   // ============================
   const fetchUser = async () => {
     try {
-      const res = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/users/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+      const apiUrl = `${process.env.REACT_APP_API_URL}/api/users/${id}`;
+
+      console.log("Fetching User From:", apiUrl);
+
+      const res = await fetch(apiUrl, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json"
         }
-      );
+      });
+
+      if (!res.ok) {
+        throw new Error("User not found");
+      }
 
       const data = await res.json();
+
+      console.log("User Data:", data);
+
       setUser(data);
       setLoading(false);
 
     } catch (error) {
       console.error("Fetch User Error:", error);
+      setError(true);
       setLoading(false);
     }
   };
 
   // ============================
-  // LOADING
+  // LOADING STATE
   // ============================
   if (loading) {
     return (
@@ -59,10 +70,16 @@ const UserDetails = () => {
     );
   }
 
-  if (!user) {
+  // ============================
+  // ERROR STATE
+  // ============================
+  if (error || !user) {
     return (
       <Box textAlign="center" mt={20}>
         <Heading size="md">User not found</Heading>
+        <Link to="/admin/users">
+          <Button mt={4}>Back</Button>
+        </Link>
       </Box>
     );
   }
@@ -115,7 +132,6 @@ const UserDetails = () => {
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
 
-          {/* USER ID */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               User ID
@@ -125,7 +141,6 @@ const UserDetails = () => {
             </Text>
           </Stack>
 
-          {/* NAME */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               Name
@@ -135,7 +150,6 @@ const UserDetails = () => {
             </Text>
           </Stack>
 
-          {/* EMAIL */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               Email
@@ -145,22 +159,18 @@ const UserDetails = () => {
             </Text>
           </Stack>
 
-          {/* ROLE */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               Role
             </Text>
             <Badge
               width="fit-content"
-              colorScheme={
-                user.role === "admin" ? "purple" : "blue"
-              }
+              colorScheme={user.role === "admin" ? "purple" : "blue"}
             >
               {user.role || "user"}
             </Badge>
           </Stack>
 
-          {/* CREATED */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               Created At
@@ -170,7 +180,6 @@ const UserDetails = () => {
             </Text>
           </Stack>
 
-          {/* UPDATED */}
           <Stack spacing={1}>
             <Text fontSize="sm" color="gray.500">
               Updated At
