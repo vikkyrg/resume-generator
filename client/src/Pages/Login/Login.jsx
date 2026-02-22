@@ -210,8 +210,18 @@ const Login = () => {
             width="100%"
             py={6}
             rounded="full"
+            fontWeight="semibold"
             bgGradient="linear(to-r, teal.400, blue.500)"
             color="white"
+            transition="all 0.3s ease"
+            _hover={{
+              transform: "translateY(-3px)",
+              boxShadow: "lg",
+              bgGradient: "linear(to-r, teal.500, blue.600)",
+            }}
+            _active={{
+              transform: "scale(0.96)",
+            }}
             onClick={handleSubmit}
           >
             {isSignup ? "Create Account" : "Login"}
@@ -222,8 +232,18 @@ const Login = () => {
             width="100%"
             py={5}
             rounded="full"
+            fontWeight="medium"
             bgGradient="linear(to-r, purple.400, pink.500)"
             color="white"
+            transition="all 0.3s ease"
+            _hover={{
+              transform: "translateY(-3px)",
+              boxShadow: "lg",
+              bgGradient: "linear(to-r, purple.500, pink.600)",
+            }}
+            _active={{
+              transform: "scale(0.96)",
+            }}
             onClick={() => navigate("/adminlogin")}
           >
             Admin Login
