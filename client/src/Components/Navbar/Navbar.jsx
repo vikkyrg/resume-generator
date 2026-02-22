@@ -181,18 +181,6 @@ const Navbar = () => {
                     </Text>
                   </VStack>
 
-                  <MenuDivider />
-
-                  <MenuItem onClick={() => navigate("/builder")}>
-                    My Resume
-                  </MenuItem>
-
-                  <MenuItem onClick={() => navigate("/templates")}>
-                    Templates
-                  </MenuItem>
-
-                  <MenuDivider />
-
                   <MenuItem color="red.500" onClick={handleLogout}>
                     Logout
                   </MenuItem>
