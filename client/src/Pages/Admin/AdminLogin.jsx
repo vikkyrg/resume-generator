@@ -126,19 +126,18 @@ const AdminLogin = () => {
 
           <Button
             width="100%"
-            py={6}
+            py={5}
             rounded="full"
-            fontWeight="semibold"
+            fontWeight="medium"
             bgGradient="linear(to-r, purple.400, pink.500)"
             color="white"
-            transition="all 0.3s ease"
+            transition="all 0.25s ease"
             _hover={{
-              transform: "translateY(-3px)",
-              boxShadow: "lg",
               bgGradient: "linear(to-r, purple.500, pink.600)",
+              transform: "scale(1.02)",
             }}
             _active={{
-              transform: "scale(0.96)",
+              transform: "scale(0.98)",
             }}
             onClick={handleAdminLogin}
           >
