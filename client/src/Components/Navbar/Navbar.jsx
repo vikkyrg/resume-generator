@@ -243,7 +243,7 @@ const Navbar = () => {
                     <Box
                       mt={3}
                       p={2}
-                      bg="teal.400"
+                      bg="rgba(255,255,255,0.15)"
                       opacity={0.15}
                       borderColor="teal.200"
                       borderRadius="lg"
