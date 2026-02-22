@@ -12,7 +12,11 @@ import {
   HStack,
   useToast,
   FormErrorMessage,
+  InputGroup,
+  InputRightElement,
+  IconButton,
 } from "@chakra-ui/react";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { Link as ReachLink, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
@@ -26,7 +30,7 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState("");
 
   const toast = useToast();
@@ -194,14 +198,29 @@ const Login = () => {
 
           <FormControl>
             <FormLabel fontWeight="medium">Password</FormLabel>
-            <Input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              focusBorderColor="teal.400"
-              rounded="lg"
-            />
+
+            <InputGroup size="md">
+              <Input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                focusBorderColor="teal.400"
+                rounded="lg"
+                pr="4.5rem"   // important for mobile spacing
+              />
+
+              <InputRightElement width="3rem">
+                <IconButton
+                  h="1.75rem"
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => setShowPassword(!showPassword)}
+                  icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                  aria-label="Toggle Password"
+                />
+              </InputRightElement>
+            </InputGroup>
           </FormControl>
 
           <Button
