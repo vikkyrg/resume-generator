@@ -23,10 +23,9 @@ const API = process.env.REACT_APP_API_URL;
 console.log("API URL =", API);
 
 const Login = () => {
-
   const [isSignup, setIsSignup] = useState(false);
 
-  // ✅ STATES
+  // STATES
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,13 +36,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-
     if (isSignup && !name) {
       toast({
         title: "Name is required",
         status: "warning",
         duration: 2000,
-        isClosable: true
+        isClosable: true,
       });
       return;
     }
@@ -53,7 +51,7 @@ const Login = () => {
         title: "Email and Password required",
         status: "warning",
         duration: 2000,
-        isClosable: true
+        isClosable: true,
       });
       return;
     }
@@ -66,8 +64,8 @@ const Login = () => {
     setEmailError("");
 
     const url = isSignup
-  ? `${API}/api/auth/signup`
-  : `${API}/api/auth/login`;
+      ? `${API}/api/auth/signup`
+      : `${API}/api/auth/login`;
 
     try {
       const response = await fetch(url, {
@@ -77,7 +75,7 @@ const Login = () => {
           isSignup
             ? { name, email, password }
             : { email, password }
-        )
+        ),
       });
 
       const data = await response.json();
@@ -87,7 +85,7 @@ const Login = () => {
           title: data.msg || data.message || "Something went wrong",
           status: "error",
           duration: 2000,
-          isClosable: true
+          isClosable: true,
         });
         return;
       }
@@ -98,7 +96,7 @@ const Login = () => {
           : "Login successful",
         status: "success",
         duration: 2000,
-        isClosable: true
+        isClosable: true,
       });
 
       if (isSignup) {
@@ -107,23 +105,20 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         const redirect = localStorage.getItem("redirectAfterLogin");
         navigate("/");
-        if (redirect) {
-          localStorage.removeItem("redirectAfterLogin");
-        }
+        if (redirect) localStorage.removeItem("redirectAfterLogin");
       }
 
       setName("");
       setEmail("");
       setPassword("");
       setEmailError("");
-
     } catch (error) {
       toast({
         title: "Server error",
         description: "Please make sure backend is running.",
         status: "error",
         duration: 3000,
-        isClosable: true
+        isClosable: true,
       });
     }
   };
@@ -146,146 +141,101 @@ const Login = () => {
         maxW="420px"
         border="1px solid"
         borderColor="gray.200"
-        transition="all 0.3s ease"
-        _hover={{
-          transform: "translateY(-5px)",
-          shadow: "xl",
-        }}
       >
-
         <Heading mb={6} textAlign="center" fontWeight="bold">
           {isSignup ? "Create Account" : "Welcome Back"}
         </Heading>
 
         <VStack spacing={5}>
-
+          {/* NAME FIELD */}
           {isSignup && (
             <FormControl>
-              <FormLabel fontWeight="medium">Name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <Input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
                 focusBorderColor="teal.400"
-                rounded="lg"
               />
             </FormControl>
           )}
 
+          {/* EMAIL FIELD */}
           <FormControl isInvalid={emailError}>
-            <FormLabel fontWeight="medium">Email</FormLabel>
+            <FormLabel>Email</FormLabel>
             <Input
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-
                 if (isSignup && !e.target.value.endsWith("@gmail.com")) {
-                  setEmailError("Only Gmail addresses allowed (@gmail.com)");
+                  setEmailError("Only Gmail allowed");
                 } else {
                   setEmailError("");
                 }
               }}
               placeholder="Enter your email"
               focusBorderColor="teal.400"
-              rounded="lg"
             />
-            {emailError && (
-              <FormErrorMessage>
-                {emailError}
-              </FormErrorMessage>
-            )}
+            {emailError && <FormErrorMessage>{emailError}</FormErrorMessage>}
           </FormControl>
 
+          {/* ✅ FIXED PASSWORD FIELD (ONLY ONE) */}
           <FormControl>
-            <FormLabel fontWeight="medium">Password</FormLabel>
+            <FormLabel>Password</FormLabel>
 
-            <InputGroup size="md">
+            <InputGroup>
               <Input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 focusBorderColor="teal.400"
-                rounded="lg"
-                pr="4.5rem"   // important for mobile spacing
+                pr="3rem"
               />
 
-              <FormControl>
-  <FormLabel fontWeight="medium">Password</FormLabel>
-
-  <InputGroup>
-    <Input
-      type={showPassword ? "text" : "password"}
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      placeholder="Enter your password"
-      focusBorderColor="teal.400"
-      rounded="lg"
-      pr="3rem"   // ✅ correct spacing for ONE icon (responsive)
-    />
-
-      <InputRightElement height="100%">
-        <IconButton
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowPassword(!showPassword)}
-          icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
-          aria-label="Toggle password visibility"
-          _hover={{ bg: "transparent" }}
-          _active={{ bg: "transparent" }}
-        />
-      </InputRightElement>
-
-  </InputGroup>
-</FormControl>
-
+              <InputRightElement height="100%">
+                <IconButton
+                  variant="ghost"
+                  size="sm"
+                  icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label="Toggle Password"
+                />
+              </InputRightElement>
             </InputGroup>
           </FormControl>
 
+          {/* LOGIN BUTTON */}
           <Button
             width="100%"
             py={6}
             rounded="full"
-            fontWeight="semibold"
             bgGradient="linear(to-r, teal.400, blue.500)"
             color="white"
-            transition="all 0.3s ease"
-            _hover={{
-              transform: "translateY(-3px)",
-              boxShadow: "lg",
-              bgGradient: "linear(to-r, teal.500, blue.600)",
-            }}
-            _active={{
-              transform: "scale(0.96)",
-            }}
             onClick={handleSubmit}
           >
             {isSignup ? "Create Account" : "Login"}
           </Button>
 
+          {/* ADMIN LOGIN */}
           <Button
             width="100%"
             py={5}
             rounded="full"
-            fontWeight="medium"
             bgGradient="linear(to-r, purple.400, pink.500)"
             color="white"
-            transition="all 0.3s ease"
-            _hover={{
-              transform: "translateY(-3px)",
-              boxShadow: "lg",
-            }}
             onClick={() => navigate("/adminlogin")}
           >
             Admin Login
           </Button>
 
+          {/* SWITCH */}
           <HStack spacing={2}>
             <Text fontSize="sm">
-              {isSignup ? "Already have an account?" : "New user?"}{" "}
+              {isSignup ? "Already have an account?" : "New user?"}
               <Link
                 color="teal.500"
-                fontWeight="medium"
+                ml={1}
                 onClick={() => setIsSignup(!isSignup)}
               >
                 {isSignup ? "Login" : "Sign up"}
@@ -295,12 +245,11 @@ const Login = () => {
             <Text fontSize="sm">|</Text>
 
             <ReachLink to="/">
-              <Text fontSize="sm" color="teal.500" fontWeight="medium">
+              <Text fontSize="sm" color="teal.500">
                 Go Home
               </Text>
             </ReachLink>
           </HStack>
-
         </VStack>
       </Box>
     </Box>
