@@ -181,7 +181,7 @@ const Navbar = () => {
                   p={0}
                   borderRadius="2xl"
                   overflow="hidden"
-                  boxShadow="0 20px 40px rgba(0,0,0,0.08)"
+                  boxShadow="0 18px 40px rgba(56,178,172,0.25)"
                   border="1px solid"
                   borderColor="gray.100"
                   minW="280px"
@@ -198,9 +198,10 @@ const Navbar = () => {
                   <Box
                     px={5}
                     py={5}
-                    bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                    bgGradient="linear(to-r, teal.500, blue.500)"
                     borderBottom="1px solid"
-                    borderColor="purple.200"
+                    borderColor="teal.100"
+                    position="relative"
                   >
                     <Text fontSize="xs" color="whiteAlpha.700" fontWeight="semibold" letterSpacing="wide">
                       WELCOME BACK
@@ -217,7 +218,7 @@ const Navbar = () => {
                         <>
                           {user.name.split(' ').map((word, i, arr) => (
                             <span key={i} style={{ 
-                              background: i === 0 ? 'linear-gradient(120deg, #fff, #e0e7ff)' : 'white',
+                              background: i === 0 ? 'linear-gradient(120deg, #ccfbf1, #ffffff)' : 'white',
                               WebkitBackgroundClip: 'text',
                               WebkitTextFillColor: i === 0 ? 'transparent' : 'white',
                               display: 'inline-block',
@@ -242,11 +243,12 @@ const Navbar = () => {
                     <Box
                       mt={3}
                       p={2}
-                      bg="whiteAlpha.200"
+                      bg="teal.400"
+                      opacity={0.15}
+                      borderColor="teal.200"
                       borderRadius="lg"
                       backdropFilter="blur(10px)"
                       border="1px solid"
-                      borderColor="whiteAlpha.300"
                     >
                       <Flex alignItems="center">
                         <FaEnvelope style={{ color: 'rgba(255,255,255,0.8)', marginRight: '8px', fontSize: '14px' }} />
