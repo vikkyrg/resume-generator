@@ -85,7 +85,7 @@ const Templates = () => {
                   height={{ base: "220px", md: "300px" }}
                 >
                   <Image
-                    src={`${process.env.REACT_APP_API_URL}/uploads/${temp.image}`}
+                    src={temp.image}
                     alt={temp.name}
                     w="100%"
                     h="100%"

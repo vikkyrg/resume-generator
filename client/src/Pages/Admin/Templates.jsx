@@ -224,7 +224,7 @@ const Templates = () => {
           >
 
             <Image
-              src={`${process.env.REACT_APP_API_URL}/uploads/${temp.image}`}
+              src={temp.image}
               alt={temp.name}
               mb={3}
               borderRadius="md"
