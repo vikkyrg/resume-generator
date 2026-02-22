@@ -168,55 +168,83 @@ const Navbar = () => {
                   color="white"
                   icon={<FaUserCircle />}
                   cursor="pointer"
-                  transition="all 0.3s ease"
-                  _hover={{ transform: "scale(1.1)", boxShadow: "md" }}
+                  transition="all 0.25s ease"
+                  _hover={{
+                    transform: "scale(1.08)",
+                    boxShadow: "0 6px 18px rgba(56,178,172,0.35)",
+                  }}
                 />
               </MenuButton>
 
               <MenuList
-                p={4}
-                borderRadius="xl"
-                boxShadow="xl"
+                p={0}
+                borderRadius="2xl"
+                overflow="hidden"
+                boxShadow="0 20px 40px rgba(0,0,0,0.08)"
                 border="1px solid"
                 borderColor="gray.100"
                 minW="260px"
+                sx={{
+                  transformOrigin: "top right",
+                  animation: "menuPop 0.18s ease-out",
+                  "@keyframes menuPop": {
+                    "0%": { opacity: 0, transform: "scale(0.96) translateY(-6px)" },
+                    "100%": { opacity: 1, transform: "scale(1) translateY(0)" },
+                  },
+                }}
               >
-                {/* USER INFO CARD */}
+                {/* ===== USER HEADER ===== */}
                 <Box
+                  px={5}
+                  py={4}
                   bg="gray.50"
-                  p={3}
-                  borderRadius="lg"
-                  mb={3}
+                  borderBottom="1px solid"
+                  borderColor="gray.100"
                 >
-                  <VStack align="start" spacing={1}>
-                    <Text fontSize="xs" color="gray.500" fontWeight="semibold">
-                      NAME
-                    </Text>
-                    <Text fontWeight="bold" fontSize="md">
-                      {user?.name || "User"}
-                    </Text>
-
-                    <Text fontSize="xs" color="gray.500" fontWeight="semibold" mt={2}>
-                      EMAIL
-                    </Text>
-                    <Text fontSize="sm" color="gray.700">
-                      {user?.email}
-                    </Text>
-                  </VStack>
+                  <Text fontSize="xs" color="gray.500" fontWeight="semibold">
+                    SIGNED IN AS
+                  </Text>
+                  <Text fontWeight="bold" fontSize="md" color="gray.800">
+                    {user?.name || "User"}
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    {user?.email}
+                  </Text>
                 </Box>
 
-                <MenuDivider />
+                {/* ===== MENU BODY ===== */}
+                <Box px={3} py={3}>
+                  <MenuItem
+                    borderRadius="lg"
+                    fontWeight="medium"
+                    transition="all 0.2s ease"
+                    _hover={{
+                      bg: "gray.100",
+                    }}
+                  >
+                    Profile
+                  </MenuItem>
 
-                {/* LOGOUT */}
-                <MenuItem
-                  color="red.500"
-                  fontWeight="semibold"
-                  borderRadius="md"
-                  _hover={{ bg: "red.50" }}
-                  onClick={handleLogout}
-                >
-                  Logout
-                </MenuItem>
+                  <MenuDivider />
+
+                  {/* ===== LOGOUT ===== */}
+                  <MenuItem
+                    borderRadius="lg"
+                    color="red.500"
+                    fontWeight="semibold"
+                    transition="all 0.2s ease"
+                    _hover={{
+                      bg: "red.50",
+                      transform: "scale(1.02)",
+                    }}
+                    _active={{
+                      transform: "scale(0.98)",
+                    }}
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </MenuItem>
+                </Box>
               </MenuList>
             </Menu>
 
