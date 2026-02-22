@@ -72,9 +72,7 @@ const Login = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
-          isSignup
-            ? { name, email, password }
-            : { email, password }
+          isSignup ? { name, email, password } : { email, password }
         ),
       });
 
@@ -147,7 +145,6 @@ const Login = () => {
         </Heading>
 
         <VStack spacing={5}>
-          {/* NAME FIELD */}
           {isSignup && (
             <FormControl>
               <FormLabel>Name</FormLabel>
@@ -160,7 +157,6 @@ const Login = () => {
             </FormControl>
           )}
 
-          {/* EMAIL FIELD */}
           <FormControl isInvalid={emailError}>
             <FormLabel>Email</FormLabel>
             <Input
@@ -179,8 +175,7 @@ const Login = () => {
             {emailError && <FormErrorMessage>{emailError}</FormErrorMessage>}
           </FormControl>
 
-          {/* ✅ FIXED PASSWORD FIELD (ONLY ONE) */}
-          {/* ✅ PASSWORD FIELD (SINGLE EYE ICON ONLY) */}
+          {/* ✅ SINGLE EYE ICON PASSWORD FIELD */}
           <FormControl>
             <FormLabel>Password</FormLabel>
 
@@ -191,24 +186,29 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 focusBorderColor="teal.400"
-                pr="4.5rem"   // give space so text not overlap icon
-                autoComplete="new-password"  // 🔥 disables browser injected UI
+                pr="4.5rem"
+                autoComplete="new-password"
+                sx={{
+                  "&::-ms-reveal": { display: "none" },
+                  "&::-ms-clear": { display: "none" },
+                  "&::-webkit-credentials-auto-fill-button": {
+                    display: "none !important",
+                  },
+                }}
               />
 
               <InputRightElement width="4rem">
                 <IconButton
-                  h="1.75rem"
-                  size="sm"
                   variant="ghost"
+                  size="sm"
                   icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
                   onClick={() => setShowPassword(!showPassword)}
-                  aria-label="Toggle Password Visibility"
+                  aria-label="Toggle Password"
                 />
               </InputRightElement>
             </InputGroup>
           </FormControl>
 
-          {/* LOGIN BUTTON */}
           <Button
             width="100%"
             py={6}
@@ -222,15 +222,12 @@ const Login = () => {
               boxShadow: "lg",
               bgGradient: "linear(to-r, teal.500, blue.600)",
             }}
-            _active={{
-              transform: "scale(0.96)",
-            }}
+            _active={{ transform: "scale(0.96)" }}
             onClick={handleSubmit}
           >
             {isSignup ? "Create Account" : "Login"}
           </Button>
 
-          {/* ADMIN LOGIN */}
           <Button
             width="100%"
             py={5}
@@ -238,29 +235,15 @@ const Login = () => {
             fontWeight="medium"
             bgGradient="linear(to-r, purple.400, pink.500)"
             color="white"
-            transition="all 0.3s ease"
-            _hover={{
-              transform: "translateY(-3px)",
-              boxShadow: "lg",
-              bgGradient: "linear(to-r, purple.500, pink.600)",
-            }}
-            _active={{
-              transform: "scale(0.96)",
-            }}
             onClick={() => navigate("/adminlogin")}
           >
             Admin Login
           </Button>
 
-          {/* SWITCH */}
           <HStack spacing={2}>
             <Text fontSize="sm">
               {isSignup ? "Already have an account?" : "New user?"}
-              <Link
-                color="teal.500"
-                ml={1}
-                onClick={() => setIsSignup(!isSignup)}
-              >
+              <Link color="teal.500" ml={1} onClick={() => setIsSignup(!isSignup)}>
                 {isSignup ? "Login" : "Sign up"}
               </Link>
             </Text>

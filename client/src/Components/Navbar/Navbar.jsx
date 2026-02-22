@@ -231,7 +231,8 @@ const Navbar = () => {
                 transition="all 0.3s ease"
                 _hover={{
                   transform: "translateY(-3px)",
-                  boxShadow: "lg",
+                  boxShadow: "0 10px 25px rgba(244,63,94,0.4)",
+                  bgGradient: "linear(to-r, red.500, pink.600)",
                 }}
                 _active={{
                   transform: "scale(0.95)",
@@ -250,6 +251,15 @@ const Navbar = () => {
                 bgGradient="linear(to-r, teal.400, blue.500)"
                 color="white"
                 fontWeight="semibold"
+                transition="all 0.3s ease"
+                _hover={{
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 10px 25px rgba(56,178,172,0.4)",
+                  bgGradient: "linear(to-r, teal.500, blue.600)",
+                }}
+                _active={{
+                  transform: "scale(0.95)",
+                }}
               >
                 Login
               </Button>
