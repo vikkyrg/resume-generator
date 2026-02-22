@@ -180,6 +180,7 @@ const Login = () => {
           </FormControl>
 
           {/* ✅ FIXED PASSWORD FIELD (ONLY ONE) */}
+          {/* ✅ PASSWORD FIELD (SINGLE EYE ICON ONLY) */}
           <FormControl>
             <FormLabel>Password</FormLabel>
 
@@ -190,16 +191,18 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 focusBorderColor="teal.400"
-                pr="3rem"
+                pr="4.5rem"   // give space so text not overlap icon
+                autoComplete="new-password"  // 🔥 disables browser injected UI
               />
 
-              <InputRightElement height="100%">
+              <InputRightElement width="4rem">
                 <IconButton
-                  variant="ghost"
+                  h="1.75rem"
                   size="sm"
+                  variant="ghost"
                   icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
                   onClick={() => setShowPassword(!showPassword)}
-                  aria-label="Toggle Password"
+                  aria-label="Toggle Password Visibility"
                 />
               </InputRightElement>
             </InputGroup>
