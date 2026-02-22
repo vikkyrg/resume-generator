@@ -244,15 +244,20 @@ const Navbar = () => {
                       mt={3}
                       p={2}
                       bg="rgba(255,255,255,0.15)"
-                      opacity={0.15}
                       borderColor="teal.200"
                       borderRadius="lg"
                       backdropFilter="blur(10px)"
                       border="1px solid"
                     >
                       <Flex alignItems="center">
-                        <FaEnvelope style={{ color: 'rgba(255,255,255,0.8)', marginRight: '8px', fontSize: '14px' }} />
-                        <Text fontSize="sm" color="white" fontWeight="medium" isTruncated>
+                        <FaEnvelope style={{ color: '#FFFFFF', marginRight: '8px', fontSize: '14px' }} />
+                        <Text
+                          fontSize="sm"
+                          color="#FFFFFF"
+                          fontWeight="semibold"
+                          letterSpacing="0.3px"
+                          isTruncated
+                        >
                           {user?.email || "user@example.com"}
                         </Text>
                       </Flex>
