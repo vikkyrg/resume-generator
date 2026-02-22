@@ -160,32 +160,65 @@ const Navbar = () => {
           {isLoggedIn ? (
             <>
               {/* USER ICON WITH POPUP */}
-              <Menu>
-                <MenuButton>
-                  <Avatar
-                    size="sm"
-                    bgGradient="linear(to-r, teal.400, blue.500)"
-                    color="white"
-                    icon={<FaUserCircle />}
-                    cursor="pointer"
-                  />
-                </MenuButton>
+            <Menu>
+              <MenuButton>
+                <Avatar
+                  size="sm"
+                  bgGradient="linear(to-r, teal.400, blue.500)"
+                  color="white"
+                  icon={<FaUserCircle />}
+                  cursor="pointer"
+                  transition="all 0.3s ease"
+                  _hover={{ transform: "scale(1.1)", boxShadow: "md" }}
+                />
+              </MenuButton>
 
-                <MenuList>
-                  <VStack align="start" px={3} py={2}>
-                    <Text fontWeight="bold">
+              <MenuList
+                p={4}
+                borderRadius="xl"
+                boxShadow="xl"
+                border="1px solid"
+                borderColor="gray.100"
+                minW="260px"
+              >
+                {/* USER INFO CARD */}
+                <Box
+                  bg="gray.50"
+                  p={3}
+                  borderRadius="lg"
+                  mb={3}
+                >
+                  <VStack align="start" spacing={1}>
+                    <Text fontSize="xs" color="gray.500" fontWeight="semibold">
+                      NAME
+                    </Text>
+                    <Text fontWeight="bold" fontSize="md">
                       {user?.name || "User"}
                     </Text>
-                    <Text fontSize="sm" color="gray.500">
+
+                    <Text fontSize="xs" color="gray.500" fontWeight="semibold" mt={2}>
+                      EMAIL
+                    </Text>
+                    <Text fontSize="sm" color="gray.700">
                       {user?.email}
                     </Text>
                   </VStack>
+                </Box>
 
-                  <MenuItem color="red.500" onClick={handleLogout}>
-                    Logout
-                  </MenuItem>
-                </MenuList>
-              </Menu>
+                <MenuDivider />
+
+                {/* LOGOUT */}
+                <MenuItem
+                  color="red.500"
+                  fontWeight="semibold"
+                  borderRadius="md"
+                  _hover={{ bg: "red.50" }}
+                  onClick={handleLogout}
+                >
+                  Logout
+                </MenuItem>
+              </MenuList>
+            </Menu>
 
               {/* ORIGINAL LOGOUT BUTTON (UNCHANGED) */}
               <Button

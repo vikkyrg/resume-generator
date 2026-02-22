@@ -210,16 +210,35 @@ const Login = () => {
                 pr="4.5rem"   // important for mobile spacing
               />
 
-              <InputRightElement width="3rem">
-                <IconButton
-                  h="1.75rem"
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => setShowPassword(!showPassword)}
-                  icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
-                  aria-label="Toggle Password"
-                />
-              </InputRightElement>
+              <FormControl>
+  <FormLabel fontWeight="medium">Password</FormLabel>
+
+  <InputGroup>
+    <Input
+      type={showPassword ? "text" : "password"}
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Enter your password"
+      focusBorderColor="teal.400"
+      rounded="lg"
+      pr="3rem"   // ✅ correct spacing for ONE icon (responsive)
+    />
+
+      <InputRightElement height="100%">
+        <IconButton
+          variant="ghost"
+          size="sm"
+          onClick={() => setShowPassword(!showPassword)}
+          icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+          aria-label="Toggle password visibility"
+          _hover={{ bg: "transparent" }}
+          _active={{ bg: "transparent" }}
+        />
+      </InputRightElement>
+
+  </InputGroup>
+</FormControl>
+
             </InputGroup>
           </FormControl>
 
