@@ -75,7 +75,7 @@ export default function Footer() {
           fontWeight="medium"
           letterSpacing="wide"
         >
-          © 2025 <b>Resume Generator</b>. All rights reserved.
+          © 2026 <b>Resume Generator</b>. All rights reserved.
         </Text>
 
         {/* SOCIAL */}

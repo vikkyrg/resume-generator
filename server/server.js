@@ -2,11 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
 
 const connectDB = require("./config/db");
+
+// ✅ USE CLOUDINARY MULTER (NOT LOCAL MULTER)
+const upload = require("./config/multerCloudinary");
 
 dotenv.config();
 
@@ -19,14 +19,14 @@ app.set("trust proxy", 1);
 // ================= CORS FIX (VERCEL + LOCALHOST + PREFLIGHT) =================
 app.use(
   cors({
-    origin: true, // allow ALL origins (needed for dynamic vercel URLs)
+    origin: true, // allow all origins (needed for dynamic vercel URLs)
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-// ✅ Handle preflight manually (fixes 405 error)
+// ✅ Handle preflight (fixes 405 error)
 app.options(/.*/, cors());
 
 // ================= BODY PARSER =================
@@ -36,32 +36,13 @@ app.use(express.urlencoded({ extended: true }));
 // ================= DATABASE =================
 connectDB();
 
-// ================= ENSURE UPLOAD FOLDER EXISTS =================
-const uploadPath = path.join(__dirname, "uploads");
-
-if (!fs.existsSync(uploadPath)) {
-  fs.mkdirSync(uploadPath, { recursive: true });
-}
-
-// ================= STATIC UPLOADS =================
-app.use("/uploads", express.static(uploadPath));
-
-// ================= MULTER SETUP =================
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadPath);
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
-  }
-});
-
-const upload = multer({ storage });
-
 // ================= TEMPLATE MODEL =================
 const TemplateSchema = new mongoose.Schema({
   name: String,
+
+  // ✅ THIS NOW STORES CLOUDINARY URL (NOT filename)
   image: String,
+
   componentKey: String
 });
 
@@ -83,7 +64,7 @@ app.use("/api/users", require("./routes/userRoutes"));
 
 // ================= TEMPLATE ROUTES =================
 
-// Get Templates
+// ✅ GET ALL TEMPLATES
 app.get("/api/templates", async (req, res) => {
   try {
     const templates = await Template.find();
@@ -94,24 +75,32 @@ app.get("/api/templates", async (req, res) => {
   }
 });
 
-// Add Template
+// ✅ ADD TEMPLATE (UPLOADS IMAGE TO CLOUDINARY)
 app.post("/api/templates", upload.single("image"), async (req, res) => {
   try {
     const newTemplate = new Template({
       name: req.body.name,
-      image: req.file ? req.file.filename : null,
+
+      // ✅ CLOUDINARY RETURNS FULL URL HERE
+      image: req.file ? req.file.path : null,
+
       componentKey: req.body.componentKey
     });
 
     await newTemplate.save();
-    res.json({ message: "Template Added" });
+
+    res.json({
+      message: "Template Added",
+      template: newTemplate
+    });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error adding template" });
   }
 });
 
-// Update Template
+// ✅ UPDATE TEMPLATE
 app.put("/api/templates/:id", upload.single("image"), async (req, res) => {
   try {
     const updateData = {
@@ -119,19 +108,22 @@ app.put("/api/templates/:id", upload.single("image"), async (req, res) => {
       componentKey: req.body.componentKey
     };
 
+    // if new image uploaded → replace URL
     if (req.file) {
-      updateData.image = req.file.filename;
+      updateData.image = req.file.path;
     }
 
     await Template.findByIdAndUpdate(req.params.id, updateData);
+
     res.json({ message: "Template Updated" });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Error updating template" });
   }
 });
 
-// Delete Template
+// ✅ DELETE TEMPLATE
 app.delete("/api/templates/:id", async (req, res) => {
   try {
     await Template.findByIdAndDelete(req.params.id);
